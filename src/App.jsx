@@ -5,15 +5,22 @@ import Header from "./components/Header";
 
 function App() {
   const [bookmarks, setBookmarks] = useState([]);
+  const [readTime, setReadTime] = useState(0);
   const handleAddToBookmarks = (blogTitle) => {
     setBookmarks([...bookmarks, blogTitle]);
+  };
+  const handleMarkAsRead = (time) => {
+    setReadTime(readTime + time);
   };
   return (
     <div className="w-[85%] mx-auto">
       <Header></Header>
       <div className="flex flex-col md:flex-row justify-between gap-5 mx-2">
-        <Blogs handleAddToBookmarks={handleAddToBookmarks}></Blogs>
-        <Bookmarks bookmarks={bookmarks}></Bookmarks>
+        <Blogs
+          handleMarkAsRead={handleMarkAsRead}
+          handleAddToBookmarks={handleAddToBookmarks}
+        ></Blogs>
+        <Bookmarks readTime={readTime} bookmarks={bookmarks}></Bookmarks>
       </div>
     </div>
   );
