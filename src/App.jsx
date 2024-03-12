@@ -1,18 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Blogs from "./components/Blogs";
+import Bookmarks from "./components/Bookmarks";
+import Header from "./components/Header";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div>
-      <h1 className="text-3xl text-center my-5 font-bold underline">
-      Hello world!
-    </h1>
+    <div className="w-[85%] mx-auto">
+      <Header></Header>
+      <div className="flex flex-col md:flex-row justify-between items-center mx-2">
+      <Blogs></Blogs>
+      <Bookmarks></Bookmarks>
+      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
