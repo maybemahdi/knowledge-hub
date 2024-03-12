@@ -22,7 +22,7 @@ const Blog = ({ blog, handleAddToBookmarks, handleMarkAsRead }) => {
         </div>
         <div className="flex items-center gap-3">
           <p>{reading_time} min read</p>
-          <button onClick={() => handleAddToBookmarks(blog.title)}>
+          <button onClick={() => handleAddToBookmarks(blog)}>
             <img
               src="https://cdn.hugeicons.com/icons/all-bookmark-stroke-rounded.svg"
               alt="all-bookmark"
@@ -46,7 +46,7 @@ const Blog = ({ blog, handleAddToBookmarks, handleMarkAsRead }) => {
         ))}
       </div>
       <button
-        onClick={() => handleMarkAsRead(blog.reading_time)}
+        onClick={() => handleMarkAsRead(blog.reading_time, blog.id)}
         className="text-[#6047EC] text-[16px] underline font-semibold"
       >
         Mark as read

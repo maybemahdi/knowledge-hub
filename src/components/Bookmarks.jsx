@@ -13,7 +13,7 @@ const Bookmarks = ({ bookmarks, readTime }) => {
           <ul className="divide-y divide-gray-200">
             {bookmarks.map((bookmark, idx) => (
               <li key={idx} className="bg-slate-200 rounded-xl p-[20px] mb-4">
-                <p className="text-sm font-medium">{bookmark}</p>
+                <p className="text-sm font-medium">{bookmark.title}</p>
               </li>
             ))}
             {/* <li className="py-3">

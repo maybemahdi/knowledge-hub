@@ -9,8 +9,12 @@ function App() {
   const handleAddToBookmarks = (blogTitle) => {
     setBookmarks([...bookmarks, blogTitle]);
   };
-  const handleMarkAsRead = (time) => {
+  const handleMarkAsRead = (time, id) => {
     setReadTime(readTime + time);
+    const remainingBookmarks = bookmarks.filter(
+      (bookmark) => bookmark.id !== id
+    );
+    setBookmarks(remainingBookmarks);
   };
   return (
     <div className="w-[85%] mx-auto">
