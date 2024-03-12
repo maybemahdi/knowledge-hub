@@ -1,3 +1,4 @@
+import profile from "../images/profile.png"
 const Header = () => {
   return (
     <header className="font-[Exo 2]">
@@ -16,7 +17,7 @@ const Header = () => {
               <div className="w-10 rounded-full">
                 <img
                   alt="Tailwind CSS Navbar component"
-                  src="/src/images/profile.png"
+                  src={profile}
                 />
               </div>
             </div>
